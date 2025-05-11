@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+
+option go_package = "pkg/grpc/generated/pubsub";
+
+package pubsub_contract;
+
+import "google/protobuf/empty.proto";
+
+service PubSub {
+    // Подписка (сервер отправляет поток событий)
+    rpc Subscribe(SubscribeRequest) returns (stream Event);
+
+    // Публикация (классический запрос-ответ)
+    rpc Publish(PublishRequest) returns (google.protobuf.Empty);
+}
+
+message SubscribeRequest {
+    // Ключ (тема/subject), на который клиент хочет подписаться.
+    string key = 1;
+}
+
+message PublishRequest {
+    // Ключ (тема/subject), в который публикуется сообщение.
+    string key = 1;
+    // Данные сообщения
+    string data = 2;
+}
+
+message Event {
+    string data = 1;
+}
