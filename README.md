@@ -49,7 +49,7 @@ Protobuf-схема: [`pkg/grpc/proto/pubsub.proto`](https://github.com/KotovBor
 
 ## Пакет `subpub`
 
-Расположение: [`internal/subpub/`](https://github.com/KotovBoris/subpub-vk/blob/main/internal/subpub/subpub.go)
+Расположение: [`internal/subpub/`](https://github.com/KotovBoris/subpub-vk/tree/main/internal/subpub)
 
 Интерфейс в [`types.go`](https://github.com/KotovBoris/subpub-vk/blob/main/internal/subpub/types.go):
 
